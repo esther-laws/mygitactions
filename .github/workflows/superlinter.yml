@@ -6,7 +6,16 @@ jobs:
   super-lint:
     name: Lint code base
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./  # Specify your working directory here if needed.
     steps:
+      - name: Use Node.js 16
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
       - name: Checkout code
         uses: actions/checkout@v2
 
